@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+		<title>管理系统</title>
+		<style>
+			*{margin:0;padding:0;}
+			html,body{width:100%;height:100%;}
+			body{
+				background:url(images/bg.jpg) no-repeat center center / cover;
+				display: flex;
+				align-content: center;
+				align-items: center;
+				justify-content: center;
+			}
+			.container{
+				display: grid;
+				gap: 8px;
+				grid-template-columns: auto auto auto;
+				grid-auto-rows: minmax(135px,auto);
+				width: 55%;
+			}
+			.container>div{
+				background:rgba(0,0,0,0.1);
+				display: flex;
+				flex-flow: column nowrap;
+				align-items: center;
+				align-content: center;
+				justify-content: center;
+				cursor:pointer;
+			}
+			.container>div>p{width:100%;text-align:center;}
+			.container>div>p>img{vertical-align:middle;}
+			.container>div>p>span{color:#ffffff;font-size: 15px;line-height: 32px;}
+			.box1{
+				grid-row:1/3;
+				background:rgb(252,169,65) !important;
+			}
+			.box2{
+				background:rgb(20,207,216) !important;
+			}
+			.box3{
+				background:rgb(102,202,42) !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="box1">
+				<p><img src="images/jhgl.png"/></p>
+				<p><span>计划管理</span></p>
+			</div>
+			<div class="box2">
+				<p><img src="images/hygl.png"/></p>
+				<p><span>会议管理</span></p>
+			</div>
+			<div class="box3">
+				<p><img src="images/dagl.png"/></p>
+				<p><span>档案管理</span></p>
+			</div>
+			<div class="box4"></div>
+			<div class="box5"></div>
+			<div class="box6"></div>
+			<div class="box7"></div>
+			<div class="box8"></div>
+		</div>
+	</body>
+</html>
