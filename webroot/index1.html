@@ -9,13 +9,115 @@
 		<!--<script src="https://unpkg.com/@popperjs/core@2"></script>-->
 		<script src="js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index1.css"/>
 	</head>
 	<body>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-4">col</div>
-				<div class="col-8">col</div>
+				<div class="col-2 menu_left">
+					<div class="row active">
+						<p><img src="images/1active.png"/></p>
+						<p><span>预警清单</span></p>
+					</div>
+					<div class="row">
+						<p><img src="images/2.png"/></p>
+						<p><span>关键节点<br/>总控节点</span></p>
+					</div>
+					<div class="row">
+						<p><img src="images/3.png"/></p>
+						<p><span>项目全景计划</span></p>
+					</div>
+					<div class="row">
+						<p><img src="images/4.png"/></p>
+						<p><span>年度计划</span></p>
+					</div>
+					<div class="row">
+						<p><img src="images/5.png"/></p>
+						<p><span>月度计划</span></p>
+					</div>
+					<div class="row">
+						<p><img src="images/6.png"/></p>
+						<p><span>报表</span></p>
+					</div>
+				</div>
+				<div class="col-10 menu_right">
+					<div class="row">
+						<div class="input-group mb-3 searcharea">
+  							<input type="search" class="form-control" placeholder="请输入要查询的关键字" aria-label="Recipient's username" aria-describedby="basic-addon2">
+ 							 <div class="input-group-append">
+								 <button type="button" class="btn btn-secondary">搜一下</button>
+ 							 </div>
+</div>	
+					</div>
+					<div class="row">
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+
+     									<th scope="col">计划主体</th>
+      									<th scope="col">计划名称</th>
+      									<th scope="col">类型</th>
+      									<th scope="col">闭门时间</th>
+      									<th scope="col">负责人</th>
+      									<th scope="col">红灯</th>
+      									<th scope="col">黄灯</th>
+   	 							</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>梅州东豪大厦项目全景计划</td>
+									<td>梅州东豪大厦项目全景计划</td>
+									<td>项目全景计划</td>
+									<td>2020-05-20</td>
+									<td>张大鹏</td>
+									<td><span class="badge badge-danger">9</span></td>
+									<td><span class="badge badge-warning">0</span></td>
+								</tr>	
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
+	<script>
+		function loadTableData(inx){
+		 	$(".table tbody tr").remove();
+			switch(inx){
+				case 0:
+					$(".table tbody").append('<tr><td>东风东大厦全景计划</td><td>东风东计划</td><td>项目全景计划</td><td>2020-08-17</td><td>张小鹏</td><td><span class="badge badge-danger">9</span></td><td><span class="badge badge-warning">2</span></td></tr>');
+					break;
+				case 1:
+					$(".table tbody").append('<tr><td>大岭丫项目计划</td><td>大岭丫项目全景计划</td><td>项目全景计划</td><td>2020-08-17</td><td>张小鹏</td><td><span class="badge badge-danger">9</span></td><td><span class="badge badge-warning">2</span></td></tr>');
+					break;
+				case 2:
+					$(".table tbody").append('<tr><td>连平苛敛全景计划</td><td>东风东计划</td><td>项目全景计划</td><td>2020-08-17</td><td>张小鹏</td><td><span class="badge badge-danger">9</span></td><td><span class="badge badge-warning">2</span></td></tr>');
+					break;
+				case 3:
+					$(".table tbody").append('<tr><td>五福项目全景计划</td><td>东风东计划</td><td>项目全景计划</td><td>2020-08-17</td><td>张小鹏</td><td><span class="badge badge-danger">9</span></td><td><span class="badge badge-warning">2</span></td></tr>');
+					break;
+				case 4:
+					$(".table tbody").append('<tr><td>集团2020年度全景计划</td><td>东风东计划</td><td>项目全景计划</td><td>2020-08-17</td><td>张小鹏</td><td><span class="badge badge-danger">9</span></td><td><span class="badge badge-warning">2</span></td></tr>');
+					break;
+				case 5:
+					$(".table tbody").append('<tr><td>公司2020年度全景计划</td><td>公司项目计划</td><td>项目全景计划</td><td>2020-08-17</td><td>张小鹏</td><td><span class="badge badge-danger">9</span></td><td><span class="badge badge-warning">2</span></td></tr>');
+					break;
+				default:
+					$(".table tbody").append('<tr><td>集团财务中心2020年度全景计划</td><td>集团财务中心2020年6月计划</td><td>项目全景计划</td><td>2020-08-17</td><td>张小鹏</td><td><span class="badge badge-danger">9</span></td><td><span class="badge badge-warning">2</span></td></tr>');
+					break;
+			}
+		};
+		$(".menu_left>div.row").on("click",function(){
+			var inx = $(this).index();
+			loadTableData(inx);//加载table数据
+			inx+=1;
+			$(this).addClass("active").siblings().removeClass("active");
+			$(".menu_left>div.row img").each(function(i,v){
+				var ii = i+1;
+				v.src="images/"+ii+".png";	
+			});
+			$(this).find('img').attr('src',"images/"+inx+"active.png");
+			
+		})
+	</script>
 </html>
