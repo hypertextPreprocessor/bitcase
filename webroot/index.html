@@ -22,6 +22,7 @@
 				width: 55%;
 			}
 			.container>div{
+				position:relative;
 				background:rgba(0,0,0,0.1);
 				display: flex;
 				flex-flow: column nowrap;
@@ -29,6 +30,18 @@
 				align-content: center;
 				justify-content: center;
 				cursor:pointer;
+			}
+			.container>div>span{
+				position: absolute;
+    				right: 0;
+    				top: 0;
+   				padding: 2%;
+			   	width: 14%;
+    				background: red;
+    				border-bottom-left-radius: 15px;
+    				text-align: center;
+    				color: #ffffff;
+    				font-size: 15px;
 			}
 			.container>div>p{width:100%;text-align:center;}
 			.container>div>p>img{vertical-align:middle;}
@@ -43,6 +56,10 @@
 			.box3{
 				background:rgb(102,202,42) !important;
 			}
+			.box4{
+				background:rgb(102,202,42) !important;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -59,7 +76,11 @@
 				<p><img src="images/dagl.png"/></p>
 				<p><span>档案管理</span></p>
 			</div>
-			<div class="box4"></div>
+			<div class="box4">
+				<span>20</span>
+				<p><img src="images/dagl.png"/></p>
+				<p><span>代办中心</span></p>
+			</div>
 			<div class="box5"></div>
 			<div class="box6"></div>
 			<div class="box7"></div>
